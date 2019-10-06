@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var admin = require("firebase-admin");
 
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
   var serviceAccount = require("C:/Users/Ravi/Desktop/task/private.json");
 
   admin.initializeApp({

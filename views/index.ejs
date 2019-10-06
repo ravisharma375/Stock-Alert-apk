@@ -3,7 +3,7 @@
   <body>
     <h1>Admin</h1>
     <br />
-    <input type="text" id="root" />
+    <input type="text" id="root" placeholder="Enter id to send alert" />
     <button id="btn1">Alert Accept</button>
     <script>
       var id = document.getElementById("root");
@@ -12,14 +12,14 @@
         let btnvalue = id.value;
         console.log(btnvalue);
         fetch(`/main`, {
-          method: "GET"
+          method: "POST"
         })
           .then(response => response.json())
           .then(json => {
             console.log(json);
           })
           .catch(error => error);
-
+        alert("alert message Successfully sent ");
         fetch(`/index/${btnvalue}`, {
           method: "POST"
         })
